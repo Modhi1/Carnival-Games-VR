@@ -9,13 +9,15 @@ public class ResetObjectPosition : MonoBehaviour
 
     public static Action canHit;
     private Vector3 startPosition;
+    private Vector3 startRotation;
     public Vector3 StartPosition { get => startPosition; }
-
+    public Vector3 StartRotation { get => startRotation; }
 
     #endregion
     void Start()
     {
         startPosition = transform.position;
+        startRotation = transform.eulerAngles;
     }
 
     private void OnCollisionEnter(Collision collision)
