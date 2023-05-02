@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
         foreach (GameObject can in cans)
         {
             can.transform.position = can.GetComponent<ResetObjectPosition>().StartPosition;
+            can.GetComponent<Rigidbody>().velocity = Vector3.zero;
         }
 
     }

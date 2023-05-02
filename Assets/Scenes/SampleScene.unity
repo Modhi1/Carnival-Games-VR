@@ -4373,7 +4373,7 @@ MonoBehaviour:
   _additionalGrabPoints: []
   _useParenting: 0
   _autoCreateStartAnchor: 0
-  _startAnchor: {fileID: 0}
+  _startAnchor: {fileID: 2018061313}
   _tag: Can Ball
   _dropAlignTransformUseSelf: 1
   _dropAlignTransform: {fileID: 0}
@@ -5263,7 +5263,7 @@ MonoBehaviour:
   _additionalGrabPoints: []
   _useParenting: 0
   _autoCreateStartAnchor: 0
-  _startAnchor: {fileID: 0}
+  _startAnchor: {fileID: 501590092}
   _tag: Ball
   _dropAlignTransformUseSelf: 1
   _dropAlignTransform: {fileID: 0}
