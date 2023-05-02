@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,8 +6,11 @@ using UnityEngine;
 public class ResetObjectPosition : MonoBehaviour
 {
     #region Variables 
+
+    public static Action canHit;
     private Vector3 startPosition;
-    private Vector3 currentPosition;
+    public Vector3 StartPosition { get => startPosition; }
+
 
     #endregion
     void Start()
@@ -14,34 +18,14 @@ public class ResetObjectPosition : MonoBehaviour
         startPosition = transform.position;
     }
 
-   /*
-    void Update()
-    {
-        currentPosition = transform.position;
-        if (startPosition != transform.position )
-        {
-            StartCoroutine(ResetPosition());
-        }
-
-    }
-*/
-
-    // if the can collides with the ball -> reset its position 
-
     private void OnCollisionEnter(Collision collision)
     {
         // change this way
         if(collision.collider.name.Equals("Ball"))
         {
-            StartCoroutine(ResetPosition());
+            canHit?.Invoke();
         }
     }
 
-    IEnumerator ResetPosition()
-    {
-        yield return new WaitForSeconds(3);
-
-        transform.position = startPosition;
-    }
 
 }
