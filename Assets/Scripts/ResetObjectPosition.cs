@@ -9,13 +9,12 @@ public class ResetObjectPosition : MonoBehaviour
     private Vector3 currentPosition;
 
     #endregion
-    // Start is called before the first frame update
     void Start()
     {
         startPosition = transform.position;
     }
 
-    // Update is called once per frame
+   /*
     void Update()
     {
         currentPosition = transform.position;
@@ -23,14 +22,26 @@ public class ResetObjectPosition : MonoBehaviour
         {
             StartCoroutine(ResetPosition());
         }
+
+    }
+*/
+
+    // if the can collides with the ball -> reset its position 
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        // change this way
+        if(collision.collider.name.Equals("Ball"))
+        {
+            StartCoroutine(ResetPosition());
+        }
     }
 
-     IEnumerator ResetPosition()
+    IEnumerator ResetPosition()
     {
         yield return new WaitForSeconds(3);
 
         transform.position = startPosition;
     }
 
-    
 }
