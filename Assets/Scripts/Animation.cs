@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class Animation : MonoBehaviour
 {
+    private float yPosition;
+    private float offset =0.1f;
     void Start()
     {
-        LeanTween.moveY(GetComponent<RectTransform>(),50f,1f).setLoopPingPong();
+        yPosition = GetComponent<RectTransform>().position.y;
+        LeanTween.moveY(GetComponent<RectTransform>(),yPosition+offset,3f).setLoopPingPong();
+
+       // LeanTween.moveLocalY(gameObject, .5f, 3f).setLoopPingPong();
+
     }
 
 

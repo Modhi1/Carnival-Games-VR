@@ -14,5 +14,7 @@ public class ObjectLookAt : MonoBehaviour
     void LookAtPlayer()
     {
         transform.LookAt(Camera.main.transform);
+
+        transform.LookAt(transform.position + Camera.main.transform.rotation * Vector3.forward);
     }
 }
