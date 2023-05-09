@@ -11,7 +11,7 @@ public class ObjectAnchor : MonoBehaviour
     [SerializeField] private RectTransform _transformObjectToAnchor;
 
     private float _smoothness = 0.05f;
-    private float _offsetZ = 2f;
+    private float _offsetX = 3f;
     private Vector3 _sourcePosition;
     private Vector3 _targetPosition;
 
@@ -24,7 +24,7 @@ public class ObjectAnchor : MonoBehaviour
     {
         _sourcePosition = _transformObjectToAnchor.position;
         _targetPosition = transform.position;
-        _targetPosition.x += 2;
+        _targetPosition.x += _offsetX;
         // _transformObjectToAnchor.position = transform.position + transform.position * _offsetZ;
       //  _transformObjectToAnchor.position = Vector3.Lerp(_sourcePosition, _targetPosition, Time.time);
        
